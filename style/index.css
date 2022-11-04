@@ -1,0 +1,398 @@
+
+@font-face {
+font-family: 'new-font';
+src: url('../Chateau\ des\ Oliviers.ttf');
+}
+*, html, body {
+
+margin: 0px;
+padding: 0px;
+text-decoration: none;
+list-style: none;
+color: white;
+max-width: 100%;
+} 
+body {
+    position: relative;
+    min-height: 100vh;
+background: linear-gradient(45deg, rgb(130, 59, 211) 0%, rgb(104, 156, 246) 50%, rgb(86, 202, 226) 100%);
+margin-bottom: 110px;
+min-height: calc(100vh - 110px);
+height: 100%;
+/* padding-bottom: 100px; */
+}
+/*head*/
+#logo {
+border-radius: 0.537vh;
+max-width: 30.936vh;
+}
+#logo:hover{
+-webkit-transform: scale(0.7);
+transform: scale(0.7);
+}
+a .cadenas{
+position: relative;
+width: 2em;
+float: right;
+}
+/*footer*/
+#reseau{
+visibility: visible;
+text-align: end;
+margin-right: 2em;
+color: white;
+}
+.clear{
+    height: 40px;;
+}
+.footer{
+    position: absolute;
+    height: 110px;
+    /* margin-top: 100px; */
+bottom: 0;
+/* border: solid 1px aqua; */
+/* height: 100px; */
+width: 100%;
+height: 40px;
+}
+.reseau{
+float: right;
+width: 4em;
+margin: 2em;
+}
+#date {
+display: flex;
+justify-content: end;
+color: white;
+bottom: 0;
+width: 100%;
+
+}
+/* home */
+#menu{
+visibility: hidden;
+}
+.conteneur{
+max-width: 95em;
+height: 30vh;
+display: flex;
+justify-content: center;
+max-width: 56.25em;
+}
+.title{
+font-family: "new-font";
+font-weight: lighter;
+text-align: center;
+font-size: 5em;
+color: white;
+}
+/*Slide*/
+.d1{
+max-width: 97em;
+width: 96.676vh;
+height: 39.744vh;
+margin: 5.125vh auto;
+box-shadow: -0.313em 0.938em 0.625em 0.313em black;
+background-color: #EDEDED;
+background-repeat: no-repeat;
+background-size: cover;
+animation: fondu 25s ease-in-out infinite both;
+}
+@keyframes fondu{
+0%{background-image:url("../image/dc-comics.jpg");}
+20%{background-image:url("../image/dragon-ball-Z.jpg");}
+40%{background-image:url("../image/gardiens-de-la-galaxie.jpg");}
+60%{background-image:url("/./image/marvel.jpg");}
+80%{background-image:url("../image/mario.jpg");}
+100%{background-image:url("../image/star-wars.jpg");}
+} 
+.imageSmall{
+visibility: hidden;
+}
+/*home*/
+/* small logo categorie  */
+.logoTitre{
+display: flex;
+}
+.logoTitre ul li{
+width: 22%;
+}
+.logoTitre ul{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: 0.938em;
+margin-right: 0.625em;
+width: 100%;
+}
+.logo1{
+width: 80%;
+display: flex;
+border-radius: 2.5em;
+margin: auto;
+box-sizing: border-box;
+}
+/*navigation dans le site*/
+.navbar {
+font-size: large;
+margin-left: 40%;
+display: flex;
+justify-content: space-between;
+/* max-width: 100%; */
+box-sizing: border-box;
+}
+.navbar ul{
+display: flex;
+margin-left: 0.938em;
+margin-right: 0.625em;
+}
+.navbar li{
+float: right;
+}
+.navbar li, a{
+color: white;
+margin-left: 1.25em;
+}
+.navbar li:hover{
+font-weight: 700;
+}
+/* presentation  */
+.present{
+margin: 8%;
+font-size: large;
+text-align: center;
+}
+/* button retour et deconnexion pour toute les pages  */
+.return{
+top: 0%;
+right: 2%;
+float: right;
+}
+/* slide home */
+.slider-container {
+max-width: 50em;
+position: relative;
+margin: auto;
+height: 21.875em;
+overflow: hidden;
+}
+.menu {
+position: absolute;
+left: 0;
+z-index: 11;
+width: 100%;
+bottom: 0;
+text-align: center;
+}
+.menu label {
+cursor: pointer;
+display: inline-block;
+width: 0.625em;
+height: 0.625em;
+background: white;
+border-radius: 3.125em;
+margin: 0 0.2em 1em;
+}
+/* form contact */
+.contact{
+margin-right: auto;
+margin-left: 10%;
+display: flex;
+}
+
+input{
+background-color: whitesmoke;
+color: black;
+width: 20em;
+height: 2em;
+box-shadow: 1px black;
+}
+legend{
+text-align: center;
+}
+#monMail{
+font-family: "new-font";
+font-size: 3em;
+}
+.monMail{
+margin-left: 15em;
+margin-top: 8em;
+}
+p .formContact{
+text-align: center;
+color: white;
+}
+/* button submit/ reset */
+form, .btn-form{
+width: 10em;
+margin: 1em;
+padding: 1%;
+}
+.btnForm{
+display: flex; 
+}
+.btn-form{
+margin-top: 2em;
+color: rgb(27, 172, 229);
+-webkit-border-radius: 60px;
+border-radius: 60px;
+border: none;
+cursor: pointer;
+display: inline-block;
+font-family: sans-serif;
+font-size: 1.25em;
+padding: 0.625em 0.625em;
+text-align: center;
+text-decoration: none;
+}
+.btn-form:hover{
+border-radius: 0%;
+color: blueviolet;
+}
+/* page thank  */
+.thank{
+font-family: "new-font";
+text-align: center;
+color: white;
+font-size:3em ;
+}
+/* form admin  */
+#formAdmin{
+display: block;
+margin-left: auto;
+margin-right: auto;
+/* margin-left: 25em; */
+}
+#btnReset{
+width: 10em;
+}
+#btnSend{
+width: 10em;
+}
+#btnSend:hover{
+animation: color .5s infinite alternate;      
+transition: 0.2s;
+border-radius: 0%;
+}
+/* image product */
+.jeux {
+max-width: 20em;
+}
+.photoProduit{
+width: 5em;
+}
+/*admin  */
+.button{
+margin-top: 2em;
+color: rgb(27, 172, 229);
+-webkit-border-radius: 60px;
+border-radius: 60px;
+border: none;
+cursor: pointer;
+display: inline-block;
+font-family: sans-serif;
+font-size: 1.25em;
+padding: 0.625em 0.625em;
+text-align: center;
+text-decoration: none;
+}
+.button:hover{
+/* animation: color .5s infinite alternate;       */
+border-radius: 0%;
+color: blueviolet;
+}
+.return{
+color: white;
+position: relative;
+display: flex;
+float: right;
+margin-right: 1em;
+margin-top: 1em;
+}
+/* array product  */
+.line {
+margin-top: 0.125em;
+width: 7%;
+border-radius: 5%;
+text-align: center;
+color: white;
+}
+.modifier{
+color: black;
+}
+/* petit ecran tablette telephone */
+/* menu hamburger */
+@media screen and (max-width :600px) {
+#menu{
+visibility: visible;
+width: 2em;
+float: right;
+}
+.navbar {
+font-size: x-large;
+margin-left: 3%;
+display: flex;
+justify-content: space-between;
+max-width: 30%;
+box-sizing: border-box;
+visibility: hidden;
+}
+.navbar ul{
+display: flex;
+margin-left: 0.938em;
+margin-right: 0.625em;
+visibility: hidden;
+}
+.navbar li{
+float: right;
+visibility: hidden;
+}
+.navbar li, a{
+color: white;
+margin-left: 1.25em;
+visibility: hidden;
+}
+.navbar li:hover{
+visibility: hidden;
+font-weight: 700;
+}
+#logo {
+border-radius: 0.100vh;
+max-width: 10.936vh;
+}
+.title{
+font-size: 2em;
+}
+.thank{
+font-size: 2em;
+}
+.return{
+visibility: visible;
+margin-right: 2em;
+}
+.logoTitre{
+visibility: hidden;
+} 
+#reseau{
+visibility: hidden;
+}
+.reseau{
+visibility: visible;
+width: 2em;
+display: flex;
+margin-right: 2em; 
+}
+.cadenas{
+visibility: visible;
+}
+.d1{ 
+width: 1%;
+height: 1%;
+visibility: hidden;
+}
+.imageSmall{
+visibility: visible;
+width: 80%;
+height: 200px;
+}
+} 

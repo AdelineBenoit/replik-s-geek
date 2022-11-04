@@ -1,0 +1,61 @@
+<?php
+session_start();
+(new DotEnv('../.env'))->load();
+//  open function 
+function mAjout2(){ 
+$server = $_ENV["server"];
+$user = $_ENV["user"];
+$password = $_ENV["password"];
+$bdd = $_ENV["bdd"];
+$ref = $_POST['REF_PRODUCT'];
+$cat = $_POST['CAT_PRODUCT'];
+$name = $_POST['NAME_PRODUCT'];
+$descriptif = $_POST['DESCRIPTION_PRODUCT'];
+$prix = $_POST['PRIX_PRODUCT'];
+$product = "SELECT REF_PRODUCT FROM product WHERE REF_PRODUCT =$ref"; 
+try {
+    $connexion = new PDO('mysql:host=' . $server . ';dbname=' . $bdd, $user, $password);
+    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $datas = $connexion->query($product);
+    $datas = $datas->fetchAll();
+
+    if (isset($_POST['send'])){
+        $img_name = $_FILES['img_upload']['name'];
+        $tmp_img_name = $_FILES['img_upload']['tmp_name'];
+        $folder = '../../image/';
+        if(move_uploaded_file($tmp_img_name,$folder.$img_name)) {
+            echo "Image téléchargée";
+        }
+        else {
+            echo "Image non téléchargée";
+            echo "nom image :" . $tmp_img_name . " folder: " . $folder.$img_name;
+        }
+        if(!$datas){
+            $insertion = 'INSERT INTO `product`(`REF_PRODUCT`,`NAME_PRODUCT`,`DESCRIPTION_PRODUCT`,`CAT_PRODUCT`,`PRIX_PRODUCT`,`IMAGE_PRODUCT`) VALUES(%d,"%s","%s","%s",%d,"%s")';
+        //    fonction qui me permet de ne plus m'occuper des côtes dans mes requêtes
+            var_dump( sprintf( $insertion,
+            $ref, $name, $descriptif, $cat ,$prix, $folder.$img_name ));
+
+            var_dump($_POST);
+            var_dump($datas);
+            $insertion =  sprintf( $insertion,
+            $ref, $name, $descriptif, $cat ,$prix, $folder.$img_name );
+
+            // $datas = $connexion ->prepare($insertion);
+            // $datas = $connexion ->execute($insertion);
+
+                $datas = $connexion->query($insertion);    
+        }
+        else{
+             var_dump("Référence déjà existante.".$ref." ");
+        }
+
+    }
+    $connexion = null;
+}
+    catch (PDOException $error) {
+        echo 'n° ' . $error->getCode() . '<br/>';
+        die('Erreur : ' . $error->getMessage() . '<br/>');
+    }
+ }
+//  closed function 
